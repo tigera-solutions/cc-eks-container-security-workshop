@@ -40,6 +40,6 @@ Module 8 - Deploy Egress Gateway for a per namespace selector
 Module 9 - Deploy Egress Gateway with an AWS elastic IP  
 Module 10 - Clean up  
 
-> **Note:** The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how Calico Cloud can be configured to build a functional solution. These examples are not intended for use in production environments.
+> **Note**: The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how Calico Cloud can be configured to build a functional solution. These examples are not intended for use in production environments.
 
 
