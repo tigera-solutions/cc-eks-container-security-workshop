@@ -21,17 +21,17 @@ The estimated time to complete this workshop is 90-120 minutes.
 ## Learning Objectives
 
 Learn how to:
-- Scan container images and block deployment based on your security criteria during build time.
-- Preview and enforce security policies to protect vulnerable workloads.
-- Implement zero-trust access controls to prevent egress and lateral movement during runtime.
-- Implement runtime security with IDS/IPS, WAF, and malware detection.
-- Get visibility into Kubernetes cluster traffic to troubleshoot and improve security.
+- **Scan container images** and **block deployment** based on your security criteria during build time.
+- Preview and **enforce security policies** to protect vulnerable workloads.
+- Implement **zero-trust access controls** to prevent egress and lateral movement during runtime.
+- Implement **runtime security** with IDS/IPS, WAF, and malware detection.
+- Get **visibility** into Kubernetes cluster traffic to **troubleshoot** and **improve security**.
 
 ## Modules
 
 This workshop is organized in sequencial modules. One module will build up on top of the previous module, so please, follow the order as proposed below.
 
-Module 1 - Prerequisites  
+Module 1 - [Prerequisites](./modules/module-1-prereq.md)  
 Module 2 - Getting Started  
 Module 3 - Deploy an AWS EKS cluster using Calico CNI  
 Module 4 - Connect the AWS EKS cluster to Calico Cloud  
