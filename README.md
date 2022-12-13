@@ -32,7 +32,7 @@ Learn how to:
 This workshop is organized in sequencial modules. One module will build up on top of the previous module, so please, follow the order as proposed below.
 
 Module 1 - [Prerequisites](./modules/module-1-prereq.md)  
-Module 2 - [Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md)
+Module 2 - [Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md)  
 Module 4 - Connect the AWS EKS cluster to Calico Cloud  
 Module 5 - Create the test environment  
 Module 6 - Enable egress gateway support  
