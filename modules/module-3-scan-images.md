@@ -61,6 +61,8 @@ Lets pull two images:
    +------------+----------+----------------+------+--------------------------------+----------------------+------------------------------------------------------------------------------------------+
    | curl       | Critical | CVE-2022-32221 |  9.8 | When doing HTTP(S) transfers,  | fixed in [7.83.1-r4] | https://hackerone.com/reports/   1704017                                                 |
    |            |          |                |      | libcurl might erroneously      |                      |       
+   ...
+   <ommited output>
    </pre>
 
 
