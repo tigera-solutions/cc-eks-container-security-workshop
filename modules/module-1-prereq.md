@@ -16,12 +16,6 @@ The simplest ways to configure your workspace environment is to either use your 
 
 2. Ensure your environment has these tools:
 
-   - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
-   - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-   - [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
-   - [EKS kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
-   - [Ncat](https://nmap.org/ncat) utility
-
    - AWS CLI upgrade to v2
    
      [Installation instructions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
