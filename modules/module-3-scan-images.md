@@ -57,7 +57,7 @@ Lets pull two images:
    
     Scan result:   UNKNOWN Please set fail_threshold(-f), warn_threshold(-w) for a scan result. 
    +------------+----------+----------------+------+--------------------------------+----------------------+------------------------------------------------------------------------------------------+
-   | DEPENDENCY | SEVERITY |     CVE-ID     | CVSS |          DESCRIPTION           |      FIX    RESULT      |                                        REFERENCES                                        |
+   | DEPENDENCY | SEVERITY |     CVE-ID     | CVSS |          DESCRIPTION           |      FIX RESULT      |                                        REFERENCES                                        |
    +------------+----------+----------------+------+--------------------------------+----------------------+------------------------------------------------------------------------------------------+
    | curl       | Critical | CVE-2022-32221 |  9.8 | When doing HTTP(S) transfers,  | fixed in [7.83.1-r4] | https://hackerone.com/reports/   1704017                                                    |
    |            |          |                |      | libcurl might erroneously      |                      |       
