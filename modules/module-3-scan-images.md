@@ -77,7 +77,8 @@ Lets pull two images:
 
    To export it to the Calico Cloud you will need to get the `apiurl` and `token` information from the Calico Cloud UI.
 
-   
+   ![url_token-scanner](https://user-images.githubusercontent.com/104035488/207462579-5fb55aaa-1c7e-49c7-b942-25bbb9817ca4.gif)
+
 
 Scan image locally, do not report results
 
