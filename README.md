@@ -2,7 +2,9 @@
 
 ## Welcome
 
-The intent of this workshop is to educate security and technical teams working with Kubernetes platform how to secure cloud-native applications deployed onto the platform using Calico Cloud. While there are many capabilities available in Calico Cloud, this workshop focuses on a subset of specific security features used often by security teams and other types of technical users.
+Enterprises developing compliant cloud-native applications have two primary needs. First, they must secure and govern access to containerized workloads and the Kubernetes environment. Second, they need to simplify audit logging and compliance reporting. The Kubernetes environment is dynamic and distributed, and workloads are ephemeral, making it difficult to enforce compliance controls and provide continuous reporting.
+
+This repo intends to guide you step-by-step on creating an AWS EKS cluster, registering the cluster on Calico Cloud and securing your cloud-native applications. Although Calico Cloud has many functionalities and security components,  this workshop will explore only a few security features used to protect your workload in runtime and deployment time.
 
 ## Time Requeriments
 
