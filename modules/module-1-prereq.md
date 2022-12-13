@@ -83,11 +83,7 @@ The simplest ways to configure your workspace environment is to either use your 
      source ~/.bashrc
      ```
 
-3. Download this repo into your environment:
 
-   ```bash
-   git clone https://github.com/tigera-solutions/cc-eks-container-security-workshop
-   ```
 
 4. Configure AMI role for Cloud9 workspace.
 
@@ -143,23 +139,18 @@ The simplest ways to configure your workspace environment is to either use your 
 
    - Remove locally stored `~/.aws/credentials`
 
-       ```bash
-       rm -vf ~/.aws/credentials
-       ```
+     ```bash
+     rm -vf ~/.aws/credentials
+     ```
 
    e. Unset `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to allow Cloud9 instance to use the configured IAM role.
 
    ```bash
    unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
     ```
-
----
-[Next -> Module 2](../modules/create-eks-cluster.md)
-
-
-  
+ 
 ---
 
-[:arrow_right: Module 2 - Getting Started](/modules/module-2-getting-started.md) <br> 
+[:arrow_right: Module 2 - Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md) <br> 
 
 [:leftwards_arrow_with_hook: Back to Main](/README.md)
