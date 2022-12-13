@@ -73,6 +73,11 @@ Lets pull two images:
    
    This time you will the the `Scan Result: FAIL`
 
+2. Run the scan again, now exporting the result to the Calico Cloud.
+
+   To export it to the Calico Cloud you will need to get the `apiurl` and `token` information from the Calico Cloud UI.
+
+   
 
 Scan image locally, do not report results
 
