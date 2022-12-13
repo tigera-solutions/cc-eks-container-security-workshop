@@ -6,17 +6,17 @@
 
    [Installations Instructions](https://docs.calicocloud.io/image-assurance/scan-image-registries#start-the-cli-scanner)
 
-Linux
-
-```bash
-curl -Lo -o /tmp/tigera-scanner https://installer.calicocloud.io/tigera-scanner/v3.14.1-11/image-assurance-scanner-cli-linux-amd64
-sudo chmod +x /tmp/tigera-scanner
-sudo mv /tmp/tigera-scanner /usr/local/bin
-tigera-scanner version
-```
+   Linux
+   
+   ```bash
+   curl -Lo -o /tmp/tigera-scanner https://installer.calicocloud.io/tigera-scanner/v3.14.1-11/image-assurance-scanner-cli-linux-amd64
+   sudo chmod +x /tmp/tigera-scanner
+   sudo mv /tmp/tigera-scanner /usr/local/bin
+   tigera-scanner version
+   ```
 
 **Pull Images**
-========================
+
 
 1. pull adservice image v0.3.2
 
