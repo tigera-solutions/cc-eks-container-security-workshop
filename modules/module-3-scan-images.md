@@ -77,20 +77,26 @@ Lets pull two images:
 
    To export it to the Calico Cloud you will need to get the `apiurl` and `token` information from the Calico Cloud UI.
 
+    Go to Image Assurance > Scan Results > Settings  and copy the API URL and the API TOKEN
+
    ![url_token-scanner](https://user-images.githubusercontent.com/104035488/207462579-5fb55aaa-1c7e-49c7-b942-25bbb9817ca4.gif)
 
+   Export the values to enviroment variables:
 
-Scan image locally, do not report results
+   ```bash
+   export APIURL=< past the api url here! >
+   ```
 
-```bash
-./tigera-scanner scan tigeralabs.azurecr.io/boutiqueshop-demo/adservice:v0.3.2
-```
+   ```bash
+   export APITOKEN=< past the api token here! >
+   ```
 
-Scan images with fail and warn thresholds
+   Run the `tigera-scanner` passing the `apiurl` and `token` parameters, so the result will be exported to Calico Cloud.
 
-```bash
-./tigera-scanner scan tigeralabs.azurecr.io/boutiqueshop-demo/adservice:v0.3.2 --fail_threshold 7.0 --warn_threshold 3.9 
-```
+   ```bash
+   tigera-scanner scan registry.hub.docker.com/regisftm/website:v1.0.0 --apiurl $APIURL --token $APITOKEN
+   ```
+
 
 **Enable Runtime scanning**
 ========================
