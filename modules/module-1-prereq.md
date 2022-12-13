@@ -130,7 +130,7 @@ The simplest ways to configure your workspace environment is to either use your 
 
    - Select the instance, then choose `Actions` > `Security` > `Modify IAM Role` and assign the IAM role you created in previous step, i.e. `tigera-workshop-admin`.  
 
-   <img width="600" alt="modify-iam-role" src="https://user-images.githubusercontent.com/104035488/207369432-c5f77cb3-19ab-41f8-940f-11677a36acf4.png">
+   <p><img width="600" alt="modify-iam-role" src="https://user-images.githubusercontent.com/104035488/207369432-c5f77cb3-19ab-41f8-940f-11677a36acf4.png"></p>
 
    ![Modify IAM role](https://user-images.githubusercontent.com/104035488/207369432-c5f77cb3-19ab-41f8-940f-11677a36acf4.png)
 
