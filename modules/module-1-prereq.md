@@ -126,13 +126,11 @@ The simplest ways to configure your workspace environment is to either use your 
 
    - Click the grey circle button (in top right corner) and select `Manage EC2 Instance`.
 
-<img width="1457" alt="cloud9-manage-ec2" src="https://user-images.githubusercontent.com/104035488/207369343-2af69bbb-bbca-424b-96ae-154b7b2c1a90.png">
-
    ![Cloud9 manage EC2](https://user-images.githubusercontent.com/104035488/207369343-2af69bbb-bbca-424b-96ae-154b7b2c1a90.png)
 
    - Select the instance, then choose `Actions` > `Security` > `Modify IAM Role` and assign the IAM role you created in previous step, i.e. `tigera-workshop-admin`.
 
-<img width="810" alt="modify-iam-role" src="https://user-images.githubusercontent.com/104035488/207369432-c5f77cb3-19ab-41f8-940f-11677a36acf4.png">
+   <img width="600" alt="modify-iam-role" src="https://user-images.githubusercontent.com/104035488/207369432-c5f77cb3-19ab-41f8-940f-11677a36acf4.png">
 
    ![Modify IAM role](https://user-images.githubusercontent.com/104035488/207369432-c5f77cb3-19ab-41f8-940f-11677a36acf4.png)
 
@@ -142,8 +140,6 @@ The simplest ways to configure your workspace environment is to either use your 
    - Select AWS SETTINGS
    - Turn off AWS managed temporary credentials
    - Close the Preferences tab
-
-<img width="1459" alt="cloud9-aws-settings" src="https://user-images.githubusercontent.com/104035488/207369474-26386f6b-e67f-4d32-9b68-62f13dbcc118.png">
 
    ![Cloud9 AWS settings](https://user-images.githubusercontent.com/104035488/207369474-26386f6b-e67f-4d32-9b68-62f13dbcc118.png)
 
