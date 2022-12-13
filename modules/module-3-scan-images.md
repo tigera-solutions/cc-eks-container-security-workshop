@@ -34,13 +34,13 @@ Lets pull two images:
 
 ## Scan the images
 
-1. First, let's scan the images locally, without exporting the results to Calico Cloud
+1. First, let's scan the images locally, without exporting the results to Calico Cloud.
 
    ```bash
    tigera-scanner scan registry.hub.docker.com/regisftm/website:v1.0.0
    ```
    
-   This command will scan the image and present all the vulnerabilities found on it. However, as we didn't define the threshold for `PASS`, `WARN` or `FAIL` results, the reported result will be `UNKNOWN`
+   This command will scan the image and present all the vulnerabilities found on it. However, as we didn't define the threshold for `PASS`, `WARN` or `FAIL` results, the reported `Scan result:` will be `UNKNOWN`.
 
    <pre>
    $ tigera-scanner scan registry.hub.docker.com/regisftm/website:v1.0.0
@@ -65,6 +65,13 @@ Lets pull two images:
    [omitted output]
    </pre>
 
+   Scan the image again, but now define the thresholds using --fail_threshold (or -f) and --warn_threshold (or -w)
+
+   ```bash
+   tigera-scanner scan registry.hub.docker.com/regisftm/website:v1.0.0 -f 7.9 -w 3.9
+   ```
+   
+   This time you will the the `Scan Result: FAIL`
 
 
 Scan image locally, do not report results
