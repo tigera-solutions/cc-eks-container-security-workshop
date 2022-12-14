@@ -67,7 +67,7 @@ The simplest ways to configure your workspace environment is to either use your 
      nc --version
      ```
    
-     >For convenience consider configuring [autocompletion for kubectl](https://kubernetes.io/docs/tasks/tools/included/   optional-kubectl-configs-bash-linux/#enable-kubectl-autocompletion).
+     >For convenience consider configuring [autocompletion for kubectl](https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/#enable-kubectl-autocompletion).
    
      ```bash
      # this is optional kubectl autocomplete configuration
@@ -76,8 +76,16 @@ The simplest ways to configure your workspace environment is to either use your 
      echo 'complete -o default -F __start_kubectl k' >>~/.bashrc
      source ~/.bashrc
      ```
+ 
+   - K9s installation (optional)
 
+     Download the k9s_Linux_x68_64.tar.gz file from the k9s github repo
 
+     ```bash
+     curl --silent --location "https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_x86_64.tar.gz" | tar xz -C /tmp
+     sudo mv /tmp/k9s /usr/local/bin
+     k9s version
+     ```
 
 4. Configure AMI role for Cloud9 workspace.
 
