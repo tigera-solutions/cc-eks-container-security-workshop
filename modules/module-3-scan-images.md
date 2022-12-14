@@ -122,7 +122,7 @@ Lets pull two images:
 
 --- 
 
-[:arrow_right: Module 4 - Prerequisites](./modules/module-1-prereq.md) <br>
+[:arrow_right: Module 4 - Calico Cloud Admission Controller](/modules/module-4-admission-controller.md) <br>
 
 [:arrow_left: Module 2 - Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md)  
 [:leftwards_arrow_with_hook: Back to Main](/README.md)  

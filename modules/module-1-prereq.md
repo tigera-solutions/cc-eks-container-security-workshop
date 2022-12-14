@@ -151,6 +151,6 @@ The simplest ways to configure your workspace environment is to either use your 
  
 ---
 
-[:arrow_right: Module 2 - Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md) <br> 
+[:arrow_right: Module 2 - Create an EKS cluster and Connect it to Calico Cloud](/modules/module-2-create-eks.md) <br> 
 
 [:leftwards_arrow_with_hook: Back to Main](/README.md)

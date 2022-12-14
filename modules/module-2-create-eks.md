@@ -83,7 +83,7 @@ kubectl apply -f ./manifests/kubernetes-manifests.yaml
 
 --- 
 
-[:arrow_right: Module 1 - Prerequisites](./modules/module-1-prereq.md) <br>
+[:arrow_right: Module 1 - Prerequisites](/modules/module-1-prereq.md) <br>
 
-[:arrow_left: Module 3 - ](/modules/module-3-deploy-eks.md)  
+[:arrow_left: Module 3 - Scan Container Images](/modules/module-3-deploy-eks.md)  
 [:leftwards_arrow_with_hook: Back to Main](/README.md)  

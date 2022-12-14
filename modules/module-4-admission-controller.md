@@ -1,4 +1,4 @@
-# Calico Cloud Admission Controller
+# Module 4 - Calico Cloud Admission Controller
 
 1. Upgrade the OpenSSL from 1.0 to 1.1
 
@@ -130,7 +130,7 @@ IMAGE HERE !
    
    --- 
 
-[:arrow_right: Module 4 - Prerequisites](./modules/module-1-prereq.md) <br>
+[:arrow_right: Module 5 - Zero-trust access control using identity-aware microsegmentation](/module/module-5-zero-trust.md ) <br>
 
-[:arrow_left: Module 2 - Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md)  
+[:arrow_left: Module 3 - Scan Container Images](./modules/module-3-scan-images.md)   
 [:leftwards_arrow_with_hook: Back to Main](/README.md)  
