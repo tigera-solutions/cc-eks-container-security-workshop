@@ -152,6 +152,32 @@ We recommend that you create a global default deny policy after you complete wri
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://frontend.default 2>/dev/null | grep HTTP'
    ```
 
+   c. Deploy the following security policy for allowing DNS access to all endpoints in the security tier. In this way you don't need to create a rule allowing DNS traffic for every policy.
+
+   ```yaml
+   kubectl apply -f - <<-EOF
+   apiVersion: projectcalico.org/v3
+   kind: GlobalNetworkPolicy
+   metadata:
+     name: security.allow-kube-dns
+   spec:
+     tier: security
+     order: 200
+     selector: all()
+     types:
+     - Egress    
+     egress:
+       - action: Allow
+         protocol: UDP
+         source: {}
+         destination:
+           selector: k8s-app == "kube-dns"
+           ports:
+           - '53'
+       - action: Pass
+   EOF
+   ```
+
    Apply the policies to allow the microservices to communicate with each other.
 
    ```bash
