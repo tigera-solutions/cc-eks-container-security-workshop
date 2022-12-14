@@ -4,24 +4,21 @@ A global default deny policy ensures that unwanted traffic (ingress and egress) 
 
 By default, all traffic is allowed between the pods in a cluster. First, let's test connectivity between application components and across application stacks. All of these tests should succeed as there are no policies in place.
 
-a. Test connectivity between workloads within each namespace, use dev and default namespaces as example
+a. Test connectivity between workloads within the same namespace. Use dev as example. The expected result is `HTTP/1.1 200 OK`.
 
    ```bash
-   # test connectivity within dev namespace, the expected result is "HTTP/1.1 200 OK" 
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://nginx-svc 2>/dev/null | grep -i http'
    ```
 
-b. Test connectivity across namespaces dev/centos and default/frontend.
+b. Test connectivity across namespaces dev/centos and default/frontend. The expected result is `HTTP/1.1 200 OK`.
 
    ```bash
-   # test connectivity from dev namespace to default namespace, the expected result is "HTTP/1.1 200 OK"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://frontend.default 2>/dev/null | grep -i http'
    ```
 
-c. Test connectivity from each namespace dev and default to the Internet.
+c. Test connectivity from dev namespace to the Internet. The expected result is `HTTP/1.1 200 OK`.
 
    ```bash
-   # test connectivity from dev namespace to the Internet, the expected result is "HTTP/1.1 200 OK"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://www.google.com 2>/dev/null | grep -i http'
    ```
 
@@ -45,11 +42,6 @@ We recommend that you create a global default deny policy after you complete wri
    ```
 
    You should be able to view the potential affect of the staged default-deny policy if you navigate to the Dashboard view in the Enterprise Manager UI and look at the Packets by Policy histogram.
-
-   ```bash
-   # make a request across namespaces and view Packets by Policy histogram, the expected result is "HTTP/1.1 200 OK"
-   for i in {1..5}; do kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://frontend.default 2>/dev/null | grep -i http'; sleep 2; done
-   ```
 
    The staged policy does not affect the traffic directly but allows you to view the policy impact if it were to be enforced. You can see the deny traffic in staged policy.
 
@@ -108,28 +100,25 @@ We recommend that you create a global default deny policy after you complete wri
 
    Test connectivity with policies in place.
 
-   a. The only connections between the components within namespaces dev are from centos to nginx, which should be allowed as configured by the policies.
+   a. The only connections between the components within namespaces dev are from centos to nginx, which should be allowed as configured by the policy. The expected result is `HTTP/1.1 200 OK`.
 
    ```bash
-   # test connectivity within dev namespace, the expected result is "HTTP/1.1 200 OK"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://nginx-svc 2>/dev/null | grep -i http'
    ```
 
-   b. The connections across dev/centos pod and default/frontend pod should be blocked by the application policy.
+   b. The connections across dev/centos pod and default/frontend pod should be blocked by the policy, as it is not explictly allowing this egress traffic. The expected result is `command terminated with exit code 1`.
    
    ```bash   
-   # test connectivity from dev namespace to default namespace, the expected result is "command terminated with exit code 1"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://frontend.default 2>/dev/null | grep -i http'
    ```
 
-   c. Test connectivity from each namespace dev and default to the Internet.
+   c. Test connectivity from each namespace dev and default to the Internet. The expected result is `command terminated with exit code 1`.
    
    ```bash   
-   # test connectivity from dev namespace to the Internet, the expected result is "command terminated with exit code 1"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://www.google.com 2>/dev/null | grep -i http'
    ```
 
-   Implement explicitic policy to allow egress access from a workload in one namespace/pod, e.g. dev/centos, to default/frontend.
+   Implement a policy to explicit allow egress access from a workload dev/centos to default/frontend.
    
    a. Deploy egress policy between two namespaces dev and default.
 
@@ -157,11 +146,10 @@ We recommend that you create a global default deny policy after you complete wri
    EOF
    ```
 
-   b. Test connectivity between dev/centos pod and default/frontend service again, should be allowed now.
+   b. Test connectivity between dev/centos pod and default/frontend service again, should be allowed now. The output should be `HTTP/1.1 200 OK`.
 
    ```bash   
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://frontend.default 2>/dev/null | grep -i http'
-   #output is HTTP/1.1 200 OK
    ```
 
    Apply the policies to allow the microservices to communicate with each other.
