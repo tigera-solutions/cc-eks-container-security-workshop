@@ -34,7 +34,7 @@ This workshop is organized in sequencial modules. One module will build up on to
 Module 1 - [Prerequisites](./modules/module-1-prereq.md)  
 Module 2 - [Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md)  
 Module 3 - [Scan Container Images](./modules/module-3-scan-images.md)  
-Module 5 - Create the test environment  
+Module 4 - [Calico Cloud Admission Controller](./modules/module-4-admission-controller.md)  
 Module 6 - Enable egress gateway support  
 Module 7 - Deploy Egress Gateway for a per pod selection  
 Module 8 - Deploy Egress Gateway for a per namespace selector  

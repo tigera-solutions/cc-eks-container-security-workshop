@@ -84,11 +84,11 @@ Lets pull two images:
    Export the values to enviroment variables:
 
    ```bash
-   export APIURL=< past the api url here! >
+   export APIURL=< paste the api url here! >
    ```
 
    ```bash
-   export APITOKEN=< past the api token here! >
+   export APITOKEN=< paste the api token here! >
    ```
 
    Run the `tigera-scanner` passing the `apiurl` and `token` parameters, so the result will be exported to Calico Cloud.
@@ -97,11 +97,32 @@ Lets pull two images:
    tigera-scanner scan registry.hub.docker.com/regisftm/website:v1.0.0 --apiurl $APIURL --token $APITOKEN
    ```
 
+   This is the expected output. 
 
-**Enable Runtime scanning**
-========================
+   <pre>
+   $ tigera-scanner scan registry.hub.docker.com/regisftm/website:v1.0.0 --apiurl $APIURL --token $APITOKEN
+   INFO[0001] Vulnerability database director not set, setting it to the cache default direct /home/ec2-user/.cache. 
+   
+    scanning registry.hub.docker.com/regisftm/website:v1.0.0... 
+   INFO[0001] Rebuilding dependencies with results from a previous scan of the image. 
+   NOTE: Uploading results, this might take a while...
+   NOTE: Uploaded vulnerability results for repository path / digest registry.hub.docker.com/regisftm/website:v1.0.   0@sha256:79a9e8505d68fb535fb0d3cfe33425b1876c2a52fb7d180d5f5de86ec2cdd557
+   
+    Summary: 
+   
+    Name: registry.hub.docker.com/regisftm/website:v1.0.0
+    Digest: sha256:79a9e8505d68fb535fb0d3cfe33425b1876c2a52fb7d180d5f5de86ec2cdd557
+    Number of dependencies: 42.
+    Total vulnerabilities: 10, critical: 4, high: 6, medium: 0, low: 0, N/A: 0 
+   
+    Scan result:   ⚠ WARN (warn_threshold - 3.9, fail_threshold - 7.9, Using thresholds from Calico Cloud)  
+    </pre>
 
- ![enable-runtime](../img/enable-runtime.png)
+     Now you can visualize the scan results in the Calico Cloud UI.
 
----
-[Next -> Module 5](../modules/configure-demo-resources.md)
+--- 
+
+[:arrow_right: Module 4 - Prerequisites](./modules/module-1-prereq.md) <br>
+
+[:arrow_left: Module 2 - Create an EKS cluster and Connect it to Calico Cloud](./modules/module-2-create-eks.md)  
+[:leftwards_arrow_with_hook: Back to Main](/README.md)  
