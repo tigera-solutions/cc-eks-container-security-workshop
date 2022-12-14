@@ -181,7 +181,7 @@ We recommend that you create a global default deny policy after you complete wri
    Apply the policies to allow the microservices to communicate with each other.
 
    ```bash
-   kubectl apply -f manifest/east-west-traffic.yaml
+   kubectl apply -f manifests/east-west-traffic.yaml
    ```
 
 3. Use the Calico Cloud GUI to enforce the default-deny staged policy. After enforcing a staged policy, it takes effect immediatelly. The default-deny policy will start to actually deny traffic.
