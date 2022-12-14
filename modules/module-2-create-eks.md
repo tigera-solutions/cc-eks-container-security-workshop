@@ -15,7 +15,7 @@ eksctl create cluster --name $CLUSTERNAME --version 1.22  --region $REGION --nod
   Once cluster is created you can list it using eksctl.
   
   ```bash
-  eksctl get cluster tigera-workshop
+  eksctl get cluster tigera-workshop --region $REGION
   ```
 
 - Test access to EKS cluster with kubectl
