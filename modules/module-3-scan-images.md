@@ -74,7 +74,7 @@ Lets pull two images:
 
 2. Run the scan again, now exporting the result to the Calico Cloud.
 
-   To export it to the Calico Cloud you will need to get the `apiurl` and `token` information from the Calico Cloud UI.
+   To export it to the Calico Cloud you will need to get the `apiurl` and `token` information from the Calico Cloud UI. Also check the `Enable Runtime View`.
 
    Go to Image Assurance > Scan Results > Settings  and copy the API URL and the API TOKEN
    
