@@ -16,7 +16,7 @@ spec:
         app: website
     spec:
       containers:
-      - image: registry.hub.docker.com/regisftm/website:v1.1.0
+      - image: registry.hub.docker.com/regisftm/website:v1.0.0
         name: website
         imagePullPolicy: Always
 ---
