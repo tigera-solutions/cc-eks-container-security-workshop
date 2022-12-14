@@ -40,10 +40,92 @@
 
    The ContainerAdmissionPolicies resources are used to configure policies for Admission Controller.
 
-   Deploy container policies.
+   Deploy container policy.
+
+   ```yaml
+   kubectl create -f - <<-EOF
+   apiVersion: containersecurity.tigera.io/v1beta1
+   kind: ContainerAdmissionPolicy
+   metadata:
+     name: reject-failed-and-non-dockerhub
+   spec:
+     selector: all()
+     namespaceSelector: "admission-controller == 'true'"
+     order: 10
+     rules:
+     - action: Allow
+       imagePath:
+         operator: IsOneOf
+         values:
+         - "^registry.hub.docker.com/.*"
+       imageScanStatus:
+         operator: IsOneOf
+         values:
+         - Pass
+         - Warn
+      imageLastScan:
+        operator: "gt"
+        duration:
+          days: 7
+     - action: Reject
+   EOF
+   ```
+3. Set up alerts on vulnerabilities.
+
+   Deploy an alert to be triggered whenever there is at least one event for an image from the specified registry/ repo that has a max CVSS score greater than 7.9 within the past 30 minutes. Providing control over the exact max CVSS score threshold lets you define a trigger that is different from what the CVSS score threshold is configured for Fail scan result on the Scan Results page in Manager UI.
+
+   ```yaml
+   kubectl create -f - <<-EOF
+   apiVersion: projectcalico.org/v3
+   kind: GlobalAlert
+   metadata:
+     name: alarm-cvss-gt-79
+   spec:
+     summary: "Vulnerabilities for a specific repo based on max CVSS score"
+     description: "Vulnerabilities for a specific repo based on max CVSS score"
+     severity: 100
+     period: 30m
+     lookback: 30m
+     dataSet: vulnerability
+     query: registry="registry.hub.docker.com/regisftm" AND repository="node"
+     field: max_cvss_score
+     metric: max
+     condition: gt
+     threshold: 7.9
+   ```
+
+4. Add label to the application namespace to allow the Admission Controller to watch it.
+
+   ```bash
+   kubectl label namespace default admission-controller=true
+   ```
+
+5. Deploy the application to test the enviroment.
+
+   ```bash
+   kubectl create -f ./manifests/website.yaml
+   ```
+
+6. Look the alert generated for this attempt to deploy a compromised image.
+
+IMAGE HERE !
+
+   The application will not be allowed to be deployed because the image failed to the scanning process.
+   When this happen ideally you should fix the vulneabilities in the image before trying to deploy it again. However we know that this can be a slow and cumbersome process. As a workaround after evaluation the impact of the detected vulnerabilities, you may decide to create **exceptions** for the CVE's in the image, changing its status from `Fail` to `Warn`.
+
+IMAGE HERE!
+
+7. Delete the pods and let the replicaset to create a new one.
+
+   ```bash
+   kubectl delete pods --all
+   ```
+
+8. The image is accepted.
 
 
 
+   
    --- 
 
 [:arrow_right: Module 4 - Prerequisites](./modules/module-1-prereq.md) <br>
