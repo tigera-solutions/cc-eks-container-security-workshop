@@ -7,6 +7,11 @@ We will use the second approach during this workshop. Please, find below an exam
 ```bash
 export CLUSTERNAME=tigera-workshop
 export REGION=ca-central-1
+# 
+echo "# Start Lab Params" > ~/labVars.env
+echo export CLUSTERNAME=$CLUSTERNAME >> ~/labVars.env
+echo export REGION=$REGION >> ~/labVars.env
+#
 eksctl create cluster --name $CLUSTERNAME --version 1.22  --region $REGION --node-type m5.xlarge
 ```
 

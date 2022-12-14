@@ -11,6 +11,7 @@
 2. Delete EKS cluster.
 
    ```bash
+   source ~/egwLabVars.env
    eksctl delete cluster --name $CLUSTERNAME --region $REGION
    ```
 3. Delete Cloud9 instance.
