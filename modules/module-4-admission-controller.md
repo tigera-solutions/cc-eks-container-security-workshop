@@ -89,7 +89,9 @@
    <pre>
    $ kubectl create -f ./manifests/website.yaml
    service/website created 
-   Error from server (Action 'Reject' enforced by ContainerPolicy reject-failed-and-non-dockerhub rule index 1): error when creating "./manifests/website.yaml": admission webhook "image-assurance.tigera.io" denied the request: Action 'Reject' enforced by ContainerPolicy reject-failed-and-non-dockerhub rule index 1
+   Error from server (Action 'Reject' enforced by ContainerPolicy reject-failed-and-non-dockerhub rule index 1): 
+   error when creating "./manifests/website.yaml": admission webhook "image-assurance.tigera.io" denied the request:
+   Action 'Reject' enforced by ContainerPolicy reject-failed-and-non-dockerhub rule index 1
    </pre>
 
 6. Create the exceptions in the Calico Cloud UI.
