@@ -31,7 +31,7 @@
    export IN_NAMESPACE_SELECTOR_VALUES="true" && \
    curl ${URL}/install-ia-admission-controller.sh | bash
    # install admission controller
-   kubectl apply -f ./tigera-image-assurance-admission-controller-deploy.yaml
+   kubectl apply -f ./tigera-image-assurance-admission-controller-deploy.yaml && cd ..
    ```
 
    > The Admission Controller only watches the namespaces it is configured to track. You can configure namespace label via    `IN_NAMESPACE_SELECTOR_KEY` and `IN_NAMESPACE_SELECTOR_VALUES` variables used in the commands above. Explore    `tigera-image-assurance-admission-controller-deploy.yaml` manifest to see how those values are configured.
