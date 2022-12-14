@@ -1,11 +1,11 @@
 # Module 2 - Create an EKS cluster and Connect it to Calico Cloud
 
-Calico can be used as a CNI, or you can decide to use AWS VPC networking and have Calico only as plugin for the security policies. 
+For EKS, the Calico OSS can be used as a CNI, or you can make use of the AWS VPC networking as CNI and have Calico only as a plugin for the security policies. 
 
-We will use the second approach during this workshop. Below an example on how to create a two nodes cluster with an smaller footprint, but feel free to create your EKS cluster with the parameters you prefer. Do not forget to include the region if different than the default on your account.
+We will use the second approach during this workshop. Please, find below an example on how to create a two nodes cluster with an small footprint, but feel free to create your EKS cluster with the parameters you prefer. Do not forget to include the region if different than the default on your account.
 
 ```bash
-export CLUSTERNAME=tigera-demo
+export CLUSTERNAME=tigera-workshop
 export REGION=ca-central-1
 eksctl create cluster --name $CLUSTERNAME --version 1.22  --region $REGION --node-type m5.xlarge
 ```
