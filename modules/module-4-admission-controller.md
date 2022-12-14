@@ -50,7 +50,7 @@
      name: reject-failed-and-non-dockerhub
    spec:
      selector: all()
-     namespaceSelector: "admission-controller == 'true'"
+     namespaceSelector: "apply-container-policies == 'true'"
      order: 10
      rules:
      - action: Allow
@@ -99,7 +99,7 @@
 
    ```bash
    kubectl create namespace website
-   kubectl label namespace website admission-controller=true
+   kubectl label namespace website apply-container-policies=true
    ```
 
 5. Deploy the application to test the enviroment.
