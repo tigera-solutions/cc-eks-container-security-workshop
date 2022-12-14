@@ -37,7 +37,7 @@ Module 3 - [Scan Container Images](/modules/module-3-scan-images.md)
 Module 4 - [Calico Cloud Admission Controller](/modules/module-4-admission-controller.md)  
 Module 5 - [Zero-trust access control using identity-aware microsegmentation](/modules/module-5-zero-trust.md)  
 Module 6 - [Runtime security with IDS/IPS using Deep Packet Inspection](/modules/module-6-runtime-sec.md)  
-Module 7 - [Traffic visualization inside your Kubernetes Cluster](/modules/module-7-visibility.md)
+Module 7 - [Traffic visualization inside your Kubernetes Cluster](/modules/module-7-visibility.md)  
 Module 8 - [Clean up](/modules/module-8-clean-up.md)  
 
 --- 
