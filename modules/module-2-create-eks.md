@@ -46,7 +46,7 @@ Once you are able to login to Calico Cloud UI, go to the "Managed clusters" sect
 ### Clone this repository
 
 ```bash
-git clone https://github.com/tigera-solutions/cc-eks-container-security-workshop
+git clone https://github.com/tigera-solutions/cc-eks-container-security-workshop && cd cc-eks-container-security-workshop
 ```
 
 ### Decrease the time to collect flow logs
