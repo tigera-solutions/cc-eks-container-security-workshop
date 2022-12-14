@@ -11,12 +11,6 @@ a. Test connectivity between workloads within each namespace, use dev and defaul
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://nginx-svc 2>/dev/null | grep -i http'
    ```
 
-   ```bash
-   # test connectivity within default namespace in 8080 port
-   kubectl exec -it $(kubectl -n default get po -l app=frontend -ojsonpath='{.items[0].metadata.name}') \
-   -c server -- sh -c 'nc -zv recommendationservice 8080'
-   ```
-
 b. Test connectivity across namespaces dev/centos and default/frontend.
 
    ```bash
@@ -29,12 +23,6 @@ c. Test connectivity from each namespace dev and default to the Internet.
    ```bash
    # test connectivity from dev namespace to the Internet, the expected result is "HTTP/1.1 200 OK"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://www.google.com 2>/dev/null | grep -i http'
-   ```
-
-   ```bash
-   # test connectivity from default namespace to the Internet, the expected result is "HTTP/1.1 200 OK"
-   kubectl exec -it $(kubectl get po -l app=loadgenerator -ojsonpath='{.items[0].metadata.name}') \
-   -c main -- sh -c 'curl -m3 -sI http://www.google.com 2>/dev/null | grep -i http'
    ```
 
 We recommend that you create a global default deny policy after you complete writing policy for the traffic that you want to allow. Use the stage policy feature to get your allowed traffic working as expected, then lock down the cluster to block unwanted traffic.
@@ -68,7 +56,27 @@ We recommend that you create a global default deny policy after you complete wri
 
 2. Create other network policies to individually allow the traffic shown as blocked in step 1, until no connections are denied.
   
-   Apply network policies to your application with explicity allow and deny control.
+   First, create the policy tiers. Tiers are a hierarchical construct used to group policies and enforce higher precedence policies that cannot be circumvented by other teams. As you will learn in this tutorial, tiers have built-in features that support workload microsegmentation.
+
+   ```yaml
+   kubectl apply -f - <<-EOF   
+   apiVersion: projectcalico.org/v3
+   kind: Tier
+   metadata:
+     name: security
+   spec:
+     order: 300
+   ---
+   apiVersion: projectcalico.org/v3
+   kind: Tier
+   metadata:
+     name: platform
+   spec:
+     order: 400
+   EOF
+   ```
+
+   Now Apply network policies to your application with explicity allow and deny control.
 
    ```yaml
    kubectl apply -f - <<-EOF   
@@ -82,6 +90,13 @@ We recommend that you create a global default deny policy after you complete wri
      order: 800
      selector: app == "centos"
      egress:
+     - action: Allow
+       protocol: UDP
+       destination:
+         selector: k8s-app == "kube-dns"
+         namespaceSelector: kubernetes.io/metadata.name == "kube-system" 
+         ports:
+         - '53'
      - action: Allow
        protocol: TCP
        destination:
@@ -99,14 +114,6 @@ We recommend that you create a global default deny policy after you complete wri
    # test connectivity within dev namespace, the expected result is "HTTP/1.1 200 OK"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://nginx-svc 2>/dev/null | grep -i http'
    ```
-   
-   The connections within namespace default should be allowed as usual.
-   
-   ```bash
-   # test connectivity within default namespace in 8080 port
-   kubectl exec -it $(kubectl get po -l app=frontend -ojsonpath='{.items[0].metadata.name}') \
-   -c server -- sh -c 'nc -zv recommendationservice 8080'
-   ``` 
 
    b. The connections across dev/centos pod and default/frontend pod should be blocked by the application policy.
    
@@ -120,12 +127,6 @@ We recommend that you create a global default deny policy after you complete wri
    ```bash   
    # test connectivity from dev namespace to the Internet, the expected result is "command terminated with exit code 1"
    kubectl -n dev exec -t centos -- sh -c 'curl -m3 -sI http://www.google.com 2>/dev/null | grep -i http'
-   ```
-   
-   ```bash
-   # test connectivity from default namespace to the Internet, the expected result is "HTTP/1.1 200 OK"
-   kubectl exec -it $(kubectl get po -l app=loadgenerator -ojsonpath='{.items[0].metadata.name}') \
-   -c main -- sh -c 'curl -m3 -sI http://www.google.com 2>/dev/null | grep -i http'
    ```
 
    Implement explicitic policy to allow egress access from a workload in one namespace/pod, e.g. dev/centos, to default/frontend.
@@ -166,7 +167,7 @@ We recommend that you create a global default deny policy after you complete wri
    Apply the policies to allow the microservices to communicate with each other.
 
    ```bash
-   kubectl apply -f https://raw.githubusercontent.com/regismartins/cc-aks-security-compliance-workshop/main/manifests/east-west-traffic.yaml
+   kubectl apply -f manifest/east-west-traffic.yaml
    ```
 
 3. Use the Calico Cloud GUI to enforce the default-deny staged policy. After enforcing a staged policy, it takes effect immediatelly. The default-deny policy will start to actually deny traffic.
