@@ -1,4 +1,4 @@
-# Service Graph and Flow Visualizer
+# Module 7 - Service Graph and Flow Visualizer
 
 Connect to Calico Cloud GUI. From the menu select `Service Graph > Default`. Explore the options.
 
@@ -7,8 +7,6 @@ Connect to Calico Cloud GUI. From the menu select `Service Graph > Default`. Exp
 Connect to Calico Cloud GUI. From the menu select `Service Graph > Flow Visualizations`. Explore the options.
 
 ![flow-visualization](https://user-images.githubusercontent.com/104035488/192358472-112c832f-2fd7-4294-b8cc-fec166a9b11e.gif)
-
-Runtime security with IDS/IPS using Deep Packet Inspection](/modules/module-6-runtime-sec.md)  
 
 ---
 
