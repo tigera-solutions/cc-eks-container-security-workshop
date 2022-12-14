@@ -84,8 +84,8 @@
      summary: "Vulnerabilities for a specific repo based on max CVSS score"
      description: "Vulnerabilities for a specific repo based on max CVSS score"
      severity: 100
-     period: 30m
-     lookback: 30m
+     period: 1m
+     lookback: 1m
      dataSet: vulnerability
      query: registry="registry.hub.docker.com/regisftm" AND repository="node"
      field: max_cvss_score
