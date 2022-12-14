@@ -12,7 +12,7 @@ The simplest ways to configure your workspace environment is to either use your 
 
 1. Create Cloud9 workspace environment.
 
-    To configure a Cloud9 instance, open AWS Console and navigate to `Services` > `Developer Tools` > `Cloud9` or just search for `Cloud9`. Create environment in the desired region. You can use all the default settings when creating the environment, but consider using `t3.small` instance instead of the default `t2.micro` instance that could be a bit slow. You can name it as `tigera-workspace` to quickly find it in case you have many `Cloud9` instances. It usually takes only a few minutes to get the Cloud9 instance running.
+    To configure a Cloud9 instance, open AWS Console and navigate to `Services` > `Developer Tools` > `Cloud9` or just search for `Cloud9`. Create an environment in the desired region. You can use all the default settings when creating the environment, but consider using `t3.small` instance instead of the default `t2.micro` instance as that could be a bit slow. You can name it as `tigera-workspace` to quickly find it in case you have many `Cloud9` instances. It usually takes only a few minutes to get the Cloud9 instance running.
 
 2. Ensure your environment has these tools:
 
