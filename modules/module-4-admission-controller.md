@@ -130,7 +130,7 @@ IMAGE HERE !
    
    --- 
 
-[:arrow_right: Module 5 - Zero-trust access control using identity-aware microsegmentation](/module/module-5-zero-trust.md ) <br>
+[:arrow_right: Module 5 - Zero-trust access control using identity-aware microsegmentation](/modules/module-5-zero-trust.md ) <br>
 
-[:arrow_left: Module 3 - Scan Container Images](./modules/module-3-scan-images.md)   
+[:arrow_left: Module 3 - Scan Container Images](/modules/module-3-scan-images.md)   
 [:leftwards_arrow_with_hook: Back to Main](/README.md)  

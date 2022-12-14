@@ -1,4 +1,4 @@
-# Prerequisites
+# Module 1 - Prerequisites
 
 ## Set up and configure your environment to work with AWS resources.
 

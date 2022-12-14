@@ -1,4 +1,4 @@
-# Create an EKS cluster and Connect it to Calico Cloud
+# Module 2 - Create an EKS cluster and Connect it to Calico Cloud
 
 Calico can be used as a CNI, or you can decide to use AWS VPC networking and have Calico only as plugin for the security policies. 
 

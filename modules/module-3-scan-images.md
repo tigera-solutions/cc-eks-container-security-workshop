@@ -1,8 +1,8 @@
-# Module 3: Scan Container Images
+# Module 3 - Scan Container Images
 
 ## Install the CLI `tigera-scanner` 
 
-1. Download the latest version of the CLI scanner.
+1. Download the latest version of the Tigera CLI scanner.
 
    [Installations Instructions](https://docs.calicocloud.io/image-assurance/scan-image-registries#start-the-cli-scanner)
 
@@ -19,11 +19,10 @@
 
 Lets pull two images:
 
-1. Pull the website images website:v1.0.0 and website:v1.1.0
+1. Pull the website image website:v1.0.0
 
    ```bash
    docker pull registry.hub.docker.com/regisftm/website:v1.0.0
-   docker pull registry.hub.docker.com/regisftm/website:v1.1.0
    ```
 
 2. Verify the downloaded image.
