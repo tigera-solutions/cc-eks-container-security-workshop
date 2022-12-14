@@ -58,7 +58,7 @@ configured to trigger automatic remediation.
    kubectl -n dev exec -t netshoot -- sh -c "curl -m2 http://nginx-svc/NessusTest"
    ```
    
-   [Check the Snort Id here!](https://www.snort.org/search)
+   [Check the Snort ID here!](https://www.snort.org/search)
 
 ---
 
