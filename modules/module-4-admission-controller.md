@@ -110,18 +110,20 @@
 
 IMAGE HERE !
 
+7. Create the exceptions in the Calico Cloud UI.
+
    The application will not be allowed to be deployed because the image failed to the scanning process.
    When this happen ideally you should fix the vulneabilities in the image before trying to deploy it again. However we know that this can be a slow and cumbersome process. As a workaround after evaluation the impact of the detected vulnerabilities, you may decide to create **exceptions** for the CVE's in the image, changing its status from `Fail` to `Warn`.
 
-IMAGE HERE!
+   ![exception](https://user-images.githubusercontent.com/104035488/207643561-ed2eec90-03a8-4fc7-a085-c845121fd21a.gif)
 
-7. Delete the pods and let the replicaset to create a new one.
+8. Delete the pods and let the replicaset to create a new one.
 
    ```bash
    kubectl delete pods --all
    ```
 
-8. The image is accepted.
+9. The image is accepted.
 
 
 
