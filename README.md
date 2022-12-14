@@ -42,7 +42,7 @@ Module 8 - [Clean up](/modules/module-8-clean-up.md)
 
 --- 
 
-**Useful links**
+### Useful links
 
 - [Project Calico](https://www.tigera.io/project-calico/)
 - [Calico Academy - Get Calico Certified!](https://academy.tigera.io/)
