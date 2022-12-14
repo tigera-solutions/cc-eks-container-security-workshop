@@ -92,6 +92,7 @@
      metric: max
      condition: gt
      threshold: 7.9
+   EOF
    ```
 
 4. Add label to the application namespace to allow the Admission Controller to watch it.
