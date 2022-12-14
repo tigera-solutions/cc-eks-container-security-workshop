@@ -96,7 +96,7 @@
 
 6. Create the exceptions in the Calico Cloud UI.
 
-   The application will not be allowed to be deployed because the image failed to the scanning process.
+   The deployment will not be allowed to be created because the image failed to the scanning process.
    When this happen ideally you should fix the vulneabilities in the image before trying to deploy it again. However we know that this can be a slow and cumbersome process. As a workaround after evaluation the impact of the detected vulnerabilities, you may decide to create **exceptions** for the CVE's in the image, changing its status from `Fail` to `Warn`.
 
    ![exception](https://user-images.githubusercontent.com/104035488/207643561-ed2eec90-03a8-4fc7-a085-c845121fd21a.gif)
