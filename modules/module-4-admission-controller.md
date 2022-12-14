@@ -95,10 +95,11 @@
    EOF
    ```
 
-4. Add label to the application namespace to allow the Admission Controller to watch it.
+4. Create the namespace `website` adding the label to allow the Admission Controller to watch it.
 
    ```bash
-   kubectl label namespace default admission-controller=true
+   kubectl create namespace website
+   kubectl label namespace website admission-controller=true
    ```
 
 5. Deploy the application to test the enviroment.
