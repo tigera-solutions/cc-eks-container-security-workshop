@@ -70,7 +70,7 @@
      - action: Reject
    EOF
    ```
-3. Set up alerts on vulnerabilities.
+4. Set up alerts on vulnerabilities.
 
    Deploy an alert to be triggered whenever there is at least one event for an image from the specified registry/ repo that has a max CVSS score greater than 7.9 within the past 30 minutes. Providing control over the exact max CVSS score threshold lets you define a trigger that is different from what the CVSS score threshold is configured for Fail scan result on the Scan Results page in Manager UI.
 
@@ -94,38 +94,50 @@
    EOF
    ```
 
-4. Create the namespace `website` adding the label to allow the Admission Controller to watch it.
+5. Create the namespace `website` adding the label to allow the Admission Controller to watch it.
 
    ```bash
    kubectl create namespace website
    kubectl label namespace website apply-container-policies=true
    ```
 
-5. Deploy the application to test the enviroment.
+6. Deploy the application to test the enviroment.
 
    ```bash
    kubectl create -f ./manifests/website.yaml
    ```
 
-6. Look the alert generated for this attempt to deploy a compromised image.
+   The deployment will fail to be created. The result will be similar to the below
+   
+   <pre>
+   $ kubectl create -f ./manifests/website.yaml
+   service/website created 
+   Error from server (Action 'Reject' enforced by ContainerPolicy reject-failed-and-non-dockerhub rule index 1): error when creating "./manifests/website.yaml": admission webhook "image-assurance.tigera.io" denied the request: Action 'Reject' enforced by ContainerPolicy reject-failed-and-non-dockerhub rule index 1
+   </pre>
 
-IMAGE HERE !
+8. Look the alert generated for this attempt to deploy a compromised image.
 
-7. Create the exceptions in the Calico Cloud UI.
+   IMAGE HERE !
+
+9. Create the exceptions in the Calico Cloud UI.
 
    The application will not be allowed to be deployed because the image failed to the scanning process.
    When this happen ideally you should fix the vulneabilities in the image before trying to deploy it again. However we know that this can be a slow and cumbersome process. As a workaround after evaluation the impact of the detected vulnerabilities, you may decide to create **exceptions** for the CVE's in the image, changing its status from `Fail` to `Warn`.
 
    ![exception](https://user-images.githubusercontent.com/104035488/207643561-ed2eec90-03a8-4fc7-a085-c845121fd21a.gif)
 
-8. Delete the pods and let the replicaset to create a new one.
+10. Try to create the deployment again
 
-   ```bash
-   kubectl delete pods --all
-   ```
+    ```bash
+    kubectl create -f ./manifests/website.yaml
+    ```
 
-9. The image is accepted.
+    The image is accepted.
 
+    <pre>
+    
+    
+    </pre>
 
 
    
