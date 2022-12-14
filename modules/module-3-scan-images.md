@@ -76,9 +76,9 @@ Lets pull two images:
 
    To export it to the Calico Cloud you will need to get the `apiurl` and `token` information from the Calico Cloud UI.
 
-    Go to Image Assurance > Scan Results > Settings  and copy the API URL and the API TOKEN
-
-   ![url_token-scanner](https://user-images.githubusercontent.com/104035488/207462579-5fb55aaa-1c7e-49c7-b942-25bbb9817ca4.gif)
+   Go to Image Assurance > Scan Results > Settings  and copy the API URL and the API TOKEN
+   
+   ![apiurl](https://user-images.githubusercontent.com/104035488/207679431-02b5a56c-ca10-4fb6-b147-e881bf631cb7.gif)
 
    Export the values to enviroment variables:
 
