@@ -28,7 +28,7 @@ Lets pull two images:
 2. Verify the downloaded image.
 
    ```bash
-   docker image
+   docker images
    ```
 
 ## Scan the images
