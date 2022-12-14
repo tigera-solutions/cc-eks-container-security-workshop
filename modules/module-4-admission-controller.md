@@ -63,10 +63,10 @@
          values:
          - Pass
          - Warn
-      imageLastScan:
-        operator: "gt"
-        duration:
-          days: 7
+       imageLastScan:
+         operator: "gt"
+         duration:
+           days: 7
      - action: Reject
    EOF
    ```
