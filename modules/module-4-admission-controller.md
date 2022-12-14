@@ -79,19 +79,18 @@
    apiVersion: projectcalico.org/v3
    kind: GlobalAlert
    metadata:
-     name: alarm-cvss-gt-79
+     name: alarm-website-fail
    spec:
-     summary: "Vulnerabilities for a specific repo based on max CVSS score"
-     description: "Vulnerabilities for a specific repo based on max CVSS score"
+     summary: "Vulnerabilities for a specific repo based on results"
+     description: "Vulnerabilities for a specific repo based on results"
      severity: 100
      period: 1m
      lookback: 1m
      dataSet: vulnerability
-     query: registry="registry.hub.docker.com/regisftm" AND repository="node"
-     field: max_cvss_score
-     metric: max
+     query: registry="registry.hub.docker.com/regisftm" AND repository="node" AND result="Fail"
+     metric: count
      condition: gt
-     threshold: 7.9
+     threshold: 1
    EOF
    ```
 
