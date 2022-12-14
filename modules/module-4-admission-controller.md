@@ -110,11 +110,16 @@
     The image is accepted.
 
     <pre>
-    
-
+    $ kubectl create -f ./manifests/website.yaml
+    deployment.apps/website created
+    Error from server (AlreadyExists): error when creating "./manifests/website.yaml": services "website" already exists
     </pre>
 
+    Verify if the pods are running
 
+    ```bash
+    kubectl get pods -n website
+    ```
    
    --- 
 
