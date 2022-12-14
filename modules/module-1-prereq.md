@@ -26,12 +26,6 @@ The simplest ways to configure your workspace environment is to either use your 
      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
      unzip awscliv2.zip
      sudo ./aws/install
-     aws --version
-     ```
-     
-     Reload the shell and check the version:
-   
-     ```bash
      . ~/.bashrc
      aws --version
      ``` 
