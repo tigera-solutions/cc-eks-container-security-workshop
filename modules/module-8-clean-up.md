@@ -14,13 +14,14 @@
    source ~/labVars.env
    eksctl delete cluster --name $CLUSTERNAME --region $REGION
    ```
+   
 3. Delete Cloud9 instance.
 
    Navigate to `AWS Console` > `Services` > `Cloud9` and remove your workspace environment, e.g. `tigera-workspace`.
 
 4. Delete IAM role created for this workshop.
 
-   Use your local shell to run the AWS CLI commands.
+   Use your local shell to run the follow AWS CLI commands:
 
    ```bash
    IAM_ROLE='tigera-workshop-admin'

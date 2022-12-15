@@ -87,6 +87,13 @@ The simplest ways to configure your workspace environment is to either use your 
      k9s version
      ```
 
+### Clone this repository
+
+```bash
+git clone git@github.com:tigera-solutions/cc-eks-container-security-workshop && cd cc-eks-container-security-workshop
+```
+
+
 4. Configure AMI role for Cloud9 workspace.
 
    >This is necessary when using Cloud9 environment which has an IAM role automatically associated with it. You need to replace this role with a custom IAM role that provides necessary permissions to build EKS cluster so that you can work with the cluster using `kubectl` CLI.
@@ -103,9 +110,6 @@ The simplest ways to configure your workspace environment is to either use your 
    b. Create IAM role.
 
    ```bash
-   # go to cloned repo
-   cd ./tigera-eks-workshop
-
    IAM_ROLE='tigera-workshop-admin'
    # assign AdministratorAccess default policy. You can use a custom policy if required.
    ADMIN_POLICY_ARN=$(aws iam list-policies --query 'Policies[?PolicyName==`AdministratorAccess`].Arn' --output text)
