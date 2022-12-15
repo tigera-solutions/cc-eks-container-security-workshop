@@ -81,13 +81,13 @@
 5. Deploy the application to test the enviroment.
 
    ```bash
-   kubectl create -f ./manifests/website.yaml
+   kubectl create -f manifests/website.yaml
    ```
 
    The deployment will fail to be created. The result will be similar to the below
    
    <pre>
-   $ kubectl create -f ./manifests/website.yaml
+   $ kubectl create -f manifests/website.yaml
    service/website created 
    Error from server (Action 'Reject' enforced by ContainerPolicy reject-failed-and-non-dockerhub rule index 1): 
    error when creating "./manifests/website.yaml": admission webhook "image-assurance.tigera.io" denied the request:
@@ -104,15 +104,15 @@
 7. Try to create the deployment again
 
     ```bash
-    kubectl create -f ./manifests/website.yaml
+    kubectl apply -f manifests/website.yaml
     ```
 
     The image is accepted.
 
     <pre>
-    $ kubectl create -f ./manifests/website.yaml
+    $ kubectl apply -f manifests/website.yaml
     deployment.apps/website created
-    Error from server (AlreadyExists): error when creating "./manifests/website.yaml": services "website" already exists
+    service/website unchanged
     </pre>
 
     Verify if the pods are running
