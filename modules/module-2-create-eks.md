@@ -48,12 +48,6 @@ Once you are able to login to Calico Cloud UI, go to the "Managed clusters" sect
 
 ## Enviroment Preparation
 
-### Clone this repository
-
-```bash
-git clone git@github.com:tigera-solutions/cc-eks-container-security-workshop && cd cc-eks-container-security-workshop
-```
-
 ### Decrease the time to collect flow logs
 
 By default, flow logs are collected every 5 minutes. We will decrease that time to 15 seconds, which will increase the amount of information we must store, and while that is not recommended for production environments, it will help to speed up the time in which events are seen within Calico observability features.
